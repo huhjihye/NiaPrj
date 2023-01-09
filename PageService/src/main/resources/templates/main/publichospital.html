@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="airbnb, booking, city guide, directory, events, hotel booking, listings, marketing, places, restaurant, restaurant">
+    <meta name="description" content="Guido - Directory & Listing HTML Template">
+    <meta name="CreativeLayers" content="ATFN">
+    <!-- css file -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <!-- Title -->
+    <title>Guido - Directory & Listing HTML Template</title>
+    <!-- Favicon -->
+    <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon"/>
+    <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon"/>
+
+    <style>
+        div.minimalistBlack {
+            width: 65%;
+            text-align: center;
+            border-collapse: collapse;
+            margin: auto;
+
+        }
+
+        .divTable.minimalistBlack .divTableCell, .divTable.minimalistBlack .divTableHead {
+            border: 1px solid #E2E6EF;
+            padding: 12px 8px;
+
+        }
+
+        .divTable.minimalistBlack .divTableBody .divTableCell {
+            font-size: 17px;
+        }
+
+        .divTable.minimalistBlack .divTableHeading {
+            background: #CFCFCF;
+            background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+            background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+            background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+            border-bottom: 3px solid #000000;
+        }
+
+        .divTable.minimalistBlack .divTableHeading .divTableHead {
+            font-size: 15px;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+        }
+
+        .minimalistBlack .tableFootStyle {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000000;
+            border-top: 3px solid #000000;
+        }
+
+        .minimalistBlack .tableFootStyle {
+            font-size: 14px;
+        }
+
+        /* DivTable.com */
+        .divTable {
+            display: table;
+        }
+
+        .divTableRow {
+            display: table-row;
+        }
+
+        .divTableHeading {
+            display: table-header-group;
+        }
+
+        .divTableCell, .divTableHead {
+            display: table-cell;
+        }
+
+        .divTableHeading {
+            display: table-header-group;
+        }
+
+        .divTableFoot {
+            display: table-footer-group;
+        }
+
+        .divTableBody {
+            display: table-row-group;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main Header Nav -->
+<header class="header-nav menu_style_home_one style2 navbar-scrolltofixed stricky main-menu">
+    <div class="container-fluid p0">
+        <!-- Ace Responsive Menu -->
+        <nav>
+            <!-- Menu Toggle btn-->
+            <div class="menu-toggle">
+                <img class="nav_logo_img img-fluid" src="/images/header-logo.svg" alt="header-logo.svg">
+                <button type="button" id="menu-btn">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <a href="/covid/index" class="navbar_brand float-left dn-smd">
+                <strong><h3 style="font-size: 60px; color:#3e4c66; font-weight: bold;">질병 지키미</h3></strong>
+            </a>
+            <!-- Responsive Menu Structure-->
+            <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
+            <div class="ht_left_widget float-left">
+                <ul>
+                    <li class="list-inline-item">
+                        <div class="ht_search_widget">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="padding-right: 5%;">
+                <ul id="respMenu" class="ace-responsive-menu text-right" data-menu-style="horizontal">
+                    <li>
+                        <a href="/covid/list1"><span class="title">감염병 발생정보</span></a>
+                        <!-- Level Two-->
+                        <ul>
+                            <li><a href="/covid/list1">감염병 제1군</a></li>
+                            <li><a href="/covid/list2">감염병 제4군</a></li>
+                        </ul>
+                    </li>
+                    &nbsp;&nbsp;&nbsp;
+
+                    <li>
+                        <a href="/covid/prevention1"><span class="title">예방생활 수칙</span></a>
+                        <ul>
+                            <li><a href="/covid/prevention1">신종인플루엔자 예방수칙</a></li>
+                            <li><a href="/covid/preventionQ">신종인플루엔자 Q & A</a></li>
+
+
+                        </ul>
+                        <!-- Level Two-->
+                    </li>&nbsp;&nbsp;&nbsp;
+
+                    <li>
+                        <a href="/covid/hospital"><span class="title">병원</span></a>
+                        <!-- Level Two-->
+                    </li>&nbsp;&nbsp;&nbsp;
+
+                    <li>
+                        <a href="/covid/publichospital"><span class="title">보건소</span></a>
+                        <!-- Level Two-->
+
+                    </li>&nbsp;&nbsp;&nbsp;
+
+                    <li>
+
+                    <li class="list-inline-item list_s">
+                        <a href="/covid/RegForm" class="btn flaticon-avatar">
+                            <span class="dn-1200" style="color: red;"><strong>감염병 신고</strong></span></a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<br/>
+<div id="map" style="width:100%;height:450px;"></div>
+<br><br><br>
+<h2 style="text-align: center; color: #666666;"><strong>보건소 조회</strong></h2><br>
+
+<br>
+<br>
+<div class="divTable minimalistBlack">
+
+    <div class="divTableBody" style="font-weight: bold; background-color: #666666; color: #fff;">
+        <div class="divTableRow">
+            <div class="divTableHead">지역</div>
+            <div class="divTableHead">시군</div>
+            <div class="divTableHead">보건진료소명</div>
+            <div class="divTableHead">소재지</div>
+            <div class="divTableHead">연락처</div>
+            <div class="divTableHead">진료과목</div>
+            <div class="divTableHead">진료시간</div>
+
+        </div>
+    </div>
+
+    <div class="divTableBody" >
+        <th:block th:each="bogunsoDTO : ${bogunsoList}">
+            <div class="divTableRow">
+                <div class="divTableCell" style="width: 100px;">[[${bogunsoDTO.location}]]</div>  <!--지역-->
+                <div class="divTableCell" style="width: 100px;">[[${bogunsoDTO.locationDetail}]]</div>   <!--시군-->
+                <!--진료소명 클릭시 상세페이지로 이동    , 지도, 길찾기 보여줄 예정 -->
+                <div class="divTableCell" style="width: 150px;">   <!--보건진료소명-->
+                    <a th:text="${bogunsoDTO.name}" th:onclick="findHospital([[${bogunsoDTO.addr}]])"></a>
+                </div>
+                <div class="divTableCell" style="width: 400px;">[[${bogunsoDTO.addr}]]</div> <!--소재지-->
+                <div class="divTableCell" style="width: 150px;">[[${bogunsoDTO.phoneNumber}]]</div> <!--연락처-->
+                <div class="divTableCell" style="width: 150px;">[[${bogunsoDTO.type}]]</div> <!--진료과목-->
+                <div class="divTableCell" style="width: 150px;">[[${bogunsoDTO.time}]]</div>  <!--진료시간-->
+            </div>
+        </th:block>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-12">
+
+    </div>
+</div>
+
+
+<br><br><br><br>
+</body>
+
+
+<section class="footer_one home1">
+    <div class="container pb70">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                <div class="footer_contact_widget">
+                    <h4>Contact Us</h4>
+                    <ul class="list-unstyled">
+                        <li class="text-white df"><span class="flaticon-pin mr15"></span><a href="#">서울특별시 강서구 화곡동
+                            우장산로10길 112</a></li>
+                        <li class="text-white"><span class="flaticon-phone mr15"></span><a href="#">82+
+                            010-9962-6997</a></li>
+                        <li class="text-white"><span class="flaticon-email mr15"></span><a
+                                href="#">lowell0322@naver.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+            <div class="container pt20 pb30">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4">
+                        <div class="copyright-widget mt10 mb15-767">
+                            <p>© 질병지키미</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="footer_logo_widget text-center mb15-767">
+                            <div class="wrapper">
+                                <div class="logo text-center">
+
+                                    <span class="logo_title text-white pl15">질병지키미</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+</section>
+<a class="scrollToHome" href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- Wrapper End -->
+<script src="/js/jquery-3.6.0.js"></script>
+<script src="/js/jquery-migrate-3.0.0.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mmenu.all.js"></script>
+<script src="/js/ace-responsive-menu.js"></script>
+<script src="/js/bootstrap-select.min.js"></script>
+<script src="/js/isotop.js"></script>
+<script src="/js/snackbar.min.js"></script>
+<script src="/js/simplebar.js"></script>
+<script src="/js/parallax.js"></script>
+<script src="/js/scrollto.js"></script>
+<script src="/js/jquery-scrolltofixed-min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/progressbar.js"></script>
+<script src="/js/slider.js"></script>
+<script src="/js/timepicker.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&callback=initMap"></script>
+<script src="/js/googlemaps1.js"></script>
+<!-- Custom script for all pages -->
+<script src="/js/script.js"></script>
+</body>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=38daa9c2fb1d3938bb0e5636df3d93e8&libraries=services"></script>
+<script th:inline="javascript">
+    var bogunsoList = [[${bogunsoList}]];
+</script>
+<script>
+    // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+    var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+
+    // 지도를 생성합니다
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+
+    // 장소 검색 객체를 생성합니다
+    var ps = new kakao.maps.services.Places();
+
+    // 키워드로 장소를 검색합니다
+    for(var i=0; i<bogunsoList.length; i++) {
+        ps.keywordSearch(bogunsoList[i].addr, placesSearchCB);
+
+    }
+
+    // 키워드 검색 완료 시 호출되는 콜백함수 입니다
+    function placesSearchCB (data, status, pagination) {
+        if (status === kakao.maps.services.Status.OK) {
+
+            // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+            // LatLngBounds 객체에 좌표를 추가합니다
+            var bounds = new kakao.maps.LatLngBounds();
+
+            for (var i=0; i<data.length; i++) {
+                displayMarker(data[i]);
+                bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+            }
+
+            // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+            map.setBounds(bounds);
+        }
+    }
+
+    // 지도에 마커를 표시하는 함수입니다
+    function displayMarker(place) {
+
+        // 마커를 생성하고 지도에 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: new kakao.maps.LatLng(place.y, place.x)
+        });
+
+        // 마커에 클릭이벤트를 등록합니다
+        kakao.maps.event.addListener(marker, 'click', function() {
+            // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+            infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+            infowindow.open(map, marker);
+        });
+    }
+
+</script>
+<script type="text/javascript" th:inline="javascript">
+    function findHospital(des) {
+        console.log("des : " + des);
+        var url = "https://map.kakao.com/?sName=%EA%B0%95%EC%84%9C%ED%8F%B4%EB%A6%AC%ED%85%8D&eName=" + des;
+        window.open(url);
+    }
+</script>
+
+</html>
